@@ -26,6 +26,8 @@ source-repository head
 library
   exposed-modules:
       Lib
+      LispVal
+      Parse
   other-modules:
       Paths_scheme_repl
   hs-source-dirs:
@@ -33,6 +35,10 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , containers >=0.6
+    , mtl >=2.2
+    , parsec
+    , text >=1.2.2.1
   default-language: Haskell2010
 
 executable scheme-repl-exe
@@ -44,7 +50,11 @@ executable scheme-repl-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers >=0.6
+    , mtl >=2.2
+    , parsec
     , scheme-repl
+    , text >=1.2.2.1
   default-language: Haskell2010
 
 test-suite scheme-repl-test
@@ -57,5 +67,9 @@ test-suite scheme-repl-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers >=0.6
+    , mtl >=2.2
+    , parsec
     , scheme-repl
+    , text >=1.2.2.1
   default-language: Haskell2010
